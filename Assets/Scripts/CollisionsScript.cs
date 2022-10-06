@@ -18,6 +18,8 @@ public class CollisionsScript : MonoBehaviour
     public float timer;
     public Text timerText;
 
+    public GameObject Particles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +73,8 @@ public class CollisionsScript : MonoBehaviour
             CoinCollected.GetComponent<Text>().text = "Coin collected: " + coinCount;
 
             Destroy(other.gameObject);
+
+            Instantiate(Particles, other.transform.position, Quaternion.identity);
 
             
         }
