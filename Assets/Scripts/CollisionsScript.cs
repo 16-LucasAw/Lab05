@@ -71,6 +71,8 @@ public class CollisionsScript : MonoBehaviour
             CoinCollected.GetComponent<Text>().text = "Coin collected: " + coinCount;
 
             Destroy(other.gameObject);
+
+            
         }
 
         if(other.gameObject.tag == "Water")
