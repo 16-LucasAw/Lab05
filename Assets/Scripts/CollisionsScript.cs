@@ -49,15 +49,11 @@ public class CollisionsScript : MonoBehaviour
 
             Destroy(other.gameObject);
         }
-    }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Water")
+        if(other.gameObject.tag == "Water")
         {
-            print("You lose");
+            SceneManager.LoadScene("GameLose");
         }
     }
-
 
 }
