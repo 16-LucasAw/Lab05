@@ -13,18 +13,18 @@ public class CollisionsScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Coins")
+        if (other.gameObject.tag == "Coins")
         {
             coinCount++;
 
@@ -33,4 +33,14 @@ public class CollisionsScript : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Water")
+        {
+            print("You lose");
+        }
+    }
+
+
 }
