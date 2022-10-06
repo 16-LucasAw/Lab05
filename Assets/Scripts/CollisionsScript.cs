@@ -10,6 +10,9 @@ public class CollisionsScript : MonoBehaviour
     public GameObject CoinCollected;
     private int coinCount;
 
+    public float timer;
+    public Text timerText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,14 @@ public class CollisionsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Timer //
+        timerText.text = "Time: " + timer;
+        timer -= Time.deltaTime;
 
+        if(timer <= 0)
+        {
+            SceneManager.LoadScene("GameLose");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
