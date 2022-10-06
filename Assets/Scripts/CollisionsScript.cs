@@ -12,6 +12,9 @@ public class CollisionsScript : MonoBehaviour
 
     private int totalCoin;
 
+    //public int timeRemainding;
+    //public float timeLeft;
+    //private float TimerValue;
     public float timer;
     public Text timerText;
 
@@ -37,6 +40,26 @@ public class CollisionsScript : MonoBehaviour
         {
             SceneManager.LoadScene("GameWin");
         }
+
+
+        /*timeLeft -= Time.deltaTime;
+
+        timeRemainding = Mathf.FloorToInt(timeLeft % 60);
+
+        timerText.text = "Timer: " + timeRemainding.ToString();
+
+        if(totalCoin == coinCount)
+        {
+            if(timeLeft <= TimerValue)
+            {
+                SceneManager.LoadScene("GameWin");
+            }
+
+            else if(timeLeft <= 0)
+            {
+                SceneManager.LoadScene("GameLose");
+            }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)
