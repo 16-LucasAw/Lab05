@@ -10,13 +10,15 @@ public class CollisionsScript : MonoBehaviour
     public GameObject CoinCollected;
     private int coinCount;
 
+    private int totalCoin;
+
     public float timer;
     public Text timerText;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        totalCoin = GameObject.FindGameObjectsWithTag("Coins").Length;
     }
 
     // Update is called once per frame
@@ -29,6 +31,11 @@ public class CollisionsScript : MonoBehaviour
         if(timer <= 0)
         {
             SceneManager.LoadScene("GameLose");
+        }
+
+        if(coinCount == totalCoin)
+        {
+            SceneManager.LoadScene("GameWin");
         }
     }
 
